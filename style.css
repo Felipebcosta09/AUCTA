@@ -1,0 +1,1048 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #666666;
+  --highlight: #BFFF38;
+  --radius: 14px;
+}
+
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte padrão (texto corrido) */
+body {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  background: #2f2f2f;
+  line-height: 1.6;
+}
+
+/* Títulos principais */
+.hero h1,
+.services h2,
+.portfolio-text h2,
+.about h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Botões */
+.btn-start,
+.btn-hero {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Menu e links */
+.menu a,
+.footer-links a {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+}
+
+/* Textos secundários */
+.services .subtitle,
+.portfolio-text .subtitle,
+.about-text p,
+.footer-logo .footer-copy {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+}
+
+/* Ajuste especial no "AUCTA" do portfólio */
+.portfolio-text .aucta {
+  font-family: 'Exo 2', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding-left: 40px;
+}
+
+a { text-decoration: none; }
+
+/* Container padrão */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+header {
+  background: #121212;
+  border-bottom: 1px solid #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110px;
+}
+
+.logo img {
+  max-height: 45px;
+  width: auto;
+  display: block;
+}
+
+/* MENU */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.menu a {
+  position: relative;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #fff;
+  transition: 0.3s;
+  padding-bottom: 8px;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--highlight);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--highlight);
+}
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* BOTÃO START (HEADER) */
+.btn-start {
+  color: #2f2f2f;
+  border: 2px solid var(--highlight);
+  display: inline-block;
+  background: var(--highlight);
+  padding: 8px 50px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  box-shadow: none; /* sem brilho no estado normal */
+}
+
+.btn-start:hover {
+  background: transparent;
+  color: var(--highlight);
+  transform: scale(1.05);
+  box-shadow: 0 0 8px var(--highlight); /* brilho discreto no hover */
+}
+/* Toggle mobile */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* BOTÃO WHATSAPP FIXO */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #2f2f2f;
+  border: 2px solid var(--highlight);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px var(--highlight);
+  z-index: 200;
+  transition: transform 0.3s ease;
+}
+.whatsapp-btn img {
+  width: 32px;
+  height: 32px;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  background: url("img/hero.png") left center/cover no-repeat;
+  background-color: #0d0d0d;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 8%;
+    border-bottom: 1px solid #fff;
+}
+.hero-text {
+  max-width: 500px;
+  text-align: left;
+}
+.hero h1 {
+  font-size: 4rem;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 40px;
+}
+/* BOTÃO HERO (sempre com brilho discreto) */
+.btn-hero {
+  color: var(--highlight);
+  border: 2px solid var(--highlight);
+  display: inline-block;
+  background: transparent;
+  padding: 16px 80px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px var(--highlight); /* brilho reduzido */
+}
+
+.btn-hero:hover {
+  background: var(--highlight);
+  color: #2f2f2f;
+  transform: scale(1.05); /* um pouco menor que antes */
+  box-shadow: 0 0 3px var(--highlight); /* brilho ainda menor */
+}
+
+
+
+/* SERVICES */
+.services {
+  padding: 100px 20px;
+  text-align: center;
+  background: #2f2f2f;
+  
+}
+.services h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.services .subtitle {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 50px;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 30%, transparent 60%);
+  z-index: 0;
+}
+.card:hover {
+  transform: scale(1.05);
+  border: 2px solid var(--highlight);
+  box-shadow: 0 0 20px var(--highlight);
+}
+.card span,
+.card {
+  position: relative;
+  z-index: 1;
+}
+.card-websites {
+  background: url("img/serviço1.png") center/cover no-repeat;
+}
+.card-social {
+  background: url("img/serviço2.png") center/cover no-repeat;
+}
+.card-identidade {
+  background: url("img/serviço3.png") center/cover no-repeat;
+}
+
+
+
+/* PORTFÓLIO */
+.portfolio {
+  padding: 100px 20px;
+  background: #1a1a1a; /* fundo escuro igual ao PDF */
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.portfolio-text h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 5rem;
+  font-weight: 800; /* ExtraBold */
+  line-height: 1.05;
+  margin-bottom: 30px;
+  letter-spacing: -1.5px;
+}
+
+.portfolio-text .highlight {
+  color: var(--highlight);
+  display: inline-block;
+    padding-left: 40px; /* empurra para a direita */
+}
+
+.portfolio-text .aucta {
+  color: #fff;
+  font-weight: 700; /* Bold, existe e carrega */
+  padding-left: 40px; /* empurra para a direita */
+}
+
+
+
+.portfolio-text .subtitle {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-top: 20px;
+  line-height: 1.4;
+    padding-left: 40px; /* empurra para a direita */
+}
+
+/* Carrossel */
+.portfolio-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-images {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel-images img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 1.1s ease-in-out; /* mais lento e suave */
+}
+
+.carousel-images img.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* Setas */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--highlight);
+  padding: 10px;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.arrow.left {
+  left: -50px;
+}
+
+.arrow.right {
+  right: -50px;
+}
+
+
+/* ABOUT */
+.about {
+  padding: 100px 20px;
+  text-align: center;
+  background: 
+    /* camada granulado */
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.05) 0px,
+      rgba(255,255,255,0.05) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    /* gradiente suavizado */
+    linear-gradient(
+      to bottom,
+      #111 0%,
+      #1a1a1a 20%,
+      #222 40%,
+      #2f2f2f 55%,
+      rgba(139, 208, 42, 0.25) 70%,
+      rgba(139, 208, 42, 0.4) 85%,
+      rgba(183, 255, 0, 0.45) 100%
+    );
+  background-blend-mode: overlay;
+}
+
+
+
+
+.about h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800; /* ExtraBold */
+  color: var(--highlight);
+  margin-bottom: 40px;
+}
+
+/* círculos */
+.about-circles {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.circle-designer {
+  background-image: url("img/designer.jpg");
+}
+.circle-dev {
+  background-image: url("img/dev.jpg");
+}
+
+/* texto */
+.about-text p {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-text .highlight {
+  background: var(--highlight);
+  color: #000;
+  padding: 0 4px;
+  border-radius: 4px;
+}
+
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 50px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 30px;
+}
+
+/* LOGO + COPYRIGHT */
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.footer-logo img {
+  max-width: 310px; /* aumenta a logo */
+  display: block;
+  margin: 0 auto 100px; /* centraliza e dá espaço embaixo */
+}
+
+.footer-copy {
+  font-size: 14px; /* maior */
+  margin-top: 10px; /* desce */
+  text-align: center;
+}
+
+.footer-logo  {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: 0.85rem;
+  color: #777;
+  margin: 0;
+}
+
+/* LINKS */
+.footer-links {
+  display: flex;
+  justify-content: flex-start;
+  gap: 60px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 10px;
+}
+.footer-links a {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500; /* Medium */
+  color: #494949;
+  font-size: 1.0rem;
+  transition: 0.3s;
+}
+.footer-links a:hover {
+  color: var(--highlight);
+}
+
+/* FORMULÁRIO */
+.footer-form h3 {
+  font-size: 38px; /* maior */
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.footer-form h3 .highlight {
+  color: var(--highlight);
+}
+
+.footer-form form {
+  display: flex;
+  max-width: 320px;
+  border: 1px solid var(--highlight);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.footer-form input {
+  flex: 1;
+  padding: 12px 6px;
+  border: none;
+  outline: none;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: .95rem;
+  color: #fff;
+  background: transparent;
+  border-radius: 30px 0 0 30px;
+}
+
+.footer-form button {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+  background: var(--highlight);
+  color: #151515;
+  border: none;
+  cursor: pointer;
+  padding: 12px 28px; /* mais largo */
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.footer-form button:hover {
+  box-shadow: 0 0 10px var(--highlight),
+              0 0 20px var(--highlight),
+              0 0 30px var(--highlight);
+  transform: translatex(-3px); /* flutua levemente */
+}
+
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--highlight);
+  border-radius: 10px;
+  border: 2px solid #1a1a1a;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4ff4d;
+}
+::-webkit-scrollbar-button {
+  background: #1a1a1a;
+  height: 14px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+  background: #1a1a1a url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><polygon points="5,2 8,7 2,7" fill="%23BFFF38"/></svg>') no-repeat center;
+}
+::-webkit-scrollbar-button:vertical:increment {
+  background: #1a1a1a url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><polygon points="2,3 8,3 5,8" fill="%23BFFF38"/></svg>') no-repeat center;
+}
+
+/* ====== ANIMAÇÕES ====== */
+
+/* Keyframes padrões */
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from { transform: translateX(-80px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInRight {
+  from { transform: translateX(80px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* ====== HEADER ====== */
+header .menu li,
+header .btn-start,
+header .logo {
+  opacity: 0;
+}
+
+header.animate .menu li {
+  animation: slideDown 0.8s forwards;
+}
+header.animate .menu li:nth-child(1) { animation-delay: 0.2s; }
+header.animate .menu li:nth-child(2) { animation-delay: 0.4s; }
+header.animate .menu li:nth-child(3) { animation-delay: 0.6s; }
+header.animate .menu li:nth-child(4) { animation-delay: 0.8s; }
+header.animate .menu li:nth-child(5) { animation-delay: 1s; }
+
+header.animate .btn-start {
+  animation: slideLeft 1s forwards;
+  animation-delay: 1.2s;
+}
+
+header.animate .logo {
+  animation: slideRight 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* ====== HERO ====== */
+.hero h1,
+.hero .btn-hero,
+.hero-overlay {
+  opacity: 0;
+}
+
+.hero.animate h1 {
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1.5s;
+}
+
+.hero.animate .btn-hero {
+  animation: fadeInLeft 1.5s forwards;
+  animation-delay: 2s;
+}
+
+.hero.animate .hero-overlay {
+  animation: fadeInRight 2s forwards;
+  animation-delay: 1s;
+}
+
+/* ====== SERVICES ====== */
+.services h2,
+.services .subtitle,
+.services .cards .card {
+  opacity: 0;
+}
+
+.services.animate h2 {
+  animation: slideDown 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.services.animate .subtitle {
+  animation: slideUp 1s forwards;   /* novo: vem de baixo */
+  animation-delay: 0.7s;
+}
+
+.services.animate .cards .card:nth-child(1) {
+  animation: slideRight 1s forwards;
+  animation-delay: 0.9s;
+}
+
+.services.animate .cards .card:nth-child(2) {
+  animation: slideRight 1s forwards;
+  animation-delay: 1.2s;
+}
+
+.services.animate .cards .card:nth-child(3) {
+  animation: slideRight  1s forwards;
+  animation-delay: 1.5s;
+}
+
+
+/* ====== PORTFOLIO ====== */
+.portfolio-text,
+.portfolio-carousel {
+  opacity: 0;
+}
+
+.portfolio.animate .portfolio-text {
+  animation: fadeInLeft 1.5s forwards;
+  animation-delay: 0.5s;
+}
+
+.portfolio.animate .portfolio-carousel {
+  animation: fadeInRight 1.5s forwards;
+  animation-delay: 1s;
+}
+
+/* ====== ABOUT ====== */
+.about h2,
+.about .about-circles .circle-designer,
+.about .about-circles .circle-dev,
+.about .about-text {
+  opacity: 0;
+}
+
+.about.animate h2 {
+  animation: slideDown 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.about.animate .about-circles .circle-designer {
+  animation: slideRight 1.2s forwards;
+  animation-delay: 0.8s;
+}
+
+.about.animate .about-circles .circle-dev {
+  animation: slideLeft 1.2s forwards;
+  animation-delay: 1.1s;
+}
+
+.about.animate .about-text {
+  animation: slideUp 1.5s forwards;
+  animation-delay: 1.5s;
+}
+
+
+/* ============================= */
+/* RESPONSIVIDADE GERAL          *//* ===== FOOTER - MOBILE SIMPLIFICADO ===== */
+@media (max-width: 900px) {
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* 1 - Logo */
+  .footer-logo {
+    order: 1;
+  }
+  .footer-logo img {
+    max-width: 220px;
+    margin: 0 auto 10px;
+  }
+
+  /* 2 - Texto + formulário */
+  .footer-form {
+    order: 2;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .footer-form h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .footer-form form {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--highlight);
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  .footer-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 0.95rem;
+    background: transparent;
+    color: #fff;
+  }
+
+  .footer-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 0 30px 30px 0;
+    background: var(--highlight);
+    color: #151515;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* 3 - Esconde menu no mobile */
+  .footer-links {
+    display: none;
+  }
+
+  /* 4 - Direitos autorais no final */
+  .footer-copy {
+    order: 3;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-copy {
+    display: none;
+  }
+}
+/* ===== MENU HAMBÚRGUER - MOBILE ===== */
+@media (max-width: 900px) {
+  /* esconde o menu padrão */
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 110px; /* altura do header */
+    right: 0;
+    width: 100%;
+    background: #121212;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    text-align: center;
+  }
+
+  /* quando ativo */
+  .menu.active {
+    display: flex;
+  }
+
+  /* botão hambúrguer visível no mobile */
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  /* esconde o botão START no mobile (opcional) */
+  .btn-start {
+    display: none;
+  }
+}
+
+/* no desktop, esconde o hambúrguer */
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+    padding: 60px 5% 80px;
+    justify-content: flex-end;   /* conteúdo encostado à direita */
+    text-align: right;           /* texto alinhado à direita */
+    background-position: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    text-align: right; /* garante o alinhamento */
+  }
+
+  .btn-hero {
+    padding: 12px 40px;
+    font-size: 1rem;
+    margin-left: auto; /* botão acompanha o alinhamento */
+    display: inline-block;
+  }
+}
+@media (max-width: 900px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 110px;
+    right: 0;
+    width: 100%;
+    background: #121212;
+    padding: 20px 0;
+    border-top: 1px solid #333;
+    text-align: center;
+    z-index: 999;
+  }
+
+  /* quando o JS ativa */
+  .menu.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .btn-start {
+    display: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .services .cards {
+    flex-direction: column;
+    align-items: center; /* centraliza */
+    gap: 25px;
+  }
+
+  .services h2 {
+    font-size: 2.2rem;
+  }
+  .card {
+    width: 100%;
+    max-width: 320px;
+    height: 220px;
+  }
+}
+@media (max-width: 900px) {
+  .portfolio-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .portfolio-text h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+  }
+
+  .portfolio-carousel {
+    order: 2; /* força a vir abaixo */
+    width: 100%;
+    max-width: 400px;
+  }
+}
+@media (max-width: 600px) {
+  /* some com o texto */
+  .hero h1 {
+    display: none;
+  }
+
+  /* HERO no mobile */
+  .hero {
+    justify-content: center;
+    align-items: flex-end;       /* botão vai para parte de baixo */
+    text-align: center;
+    padding: 20px;
+    height: 40vh;                /* altura reduzida */
+    background-size: contain;    /* reduz a imagem de fundo */
+    background-position: center; /* centraliza a imagem */
+  }
+
+  /* botão centralizado */
+  .hero .btn-hero {
+    display: block;
+    margin: 0 auto 10px;
+    padding: 10px 28px;
+    font-size: 0.9rem;
+  }
+}
