@@ -269,7 +269,7 @@ header {
   font-weight: 600;
   text-shadow: 0 2px 5px rgba(0,0,0,0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  border: 2px solid transparent;
+
 }
 .card::after {
   content: "";
@@ -286,7 +286,10 @@ header {
 .card span,
 .card {
   position: relative;
-  z-index: 1;
+  overflow: hidden;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  z-index: 1; /* card na frente */
 }
 .card-websites {
   background: url("img/serviço1.png") center/cover no-repeat;
@@ -1001,6 +1004,8 @@ header.animate .logo {
     height: 220px;
   }
 }
+
+
 @media (max-width: 900px) {
   .portfolio-grid {
     display: flex;
@@ -1021,6 +1026,7 @@ header.animate .logo {
     max-width: 400px;
   }
 }
+
 @media (max-width: 600px) {
   /* some com o texto */
   .hero h1 {
@@ -1041,8 +1047,14 @@ header.animate .logo {
   /* botão centralizado */
   .hero .btn-hero {
     display: block;
-    margin: 0 auto 10px;
-    padding: 10px 28px;
-    font-size: 0.9rem;
+    margin: 0 1000 15px;         /* desce o botão */
+    padding: 8px 20px;           /* botão menor */
+    font-size: 0.8rem;           /* fonte menor */
   }
 }
+@media (max-width: 600px) {
+  .hero .btn-hero {
+    display: none;
+  }
+}
+

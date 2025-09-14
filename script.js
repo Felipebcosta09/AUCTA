@@ -109,3 +109,25 @@ document.querySelectorAll("header, .hero, .services, .portfolio, .about").forEac
 });
 
 
+// ====== FORMULÁRIO COM EMAILJS ======
+(function() {
+  emailjs.init("jSVwTzzEpts0wsu3U"); // sua Public Key
+})();
+
+const form = document.getElementById("contact-form");
+const statusMsg = document.getElementById("form-status");
+
+if (form) {
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_yf6my98", "template_0gaslyc", this)
+      .then(() => {
+        statusMsg.textContent = "✅ Email enviado com sucesso!";
+        form.reset();
+      }, (error) => {
+        statusMsg.textContent = "❌ Erro ao enviar. Tente novamente.";
+        console.error("Erro:", error);
+      });
+  });
+}
