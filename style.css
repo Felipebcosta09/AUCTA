@@ -426,10 +426,10 @@ header {
       #111 0%,
       #1a1a1a 20%,
       #222 40%,
-      #2f2f2f 55%,
-      rgba(139, 208, 42, 0.25) 70%,
-      rgba(139, 208, 42, 0.4) 85%,
-      rgba(183, 255, 0, 0.45) 100%
+      #2f2f2fd0 55%,
+      rgba(139, 208, 42, 0.193) 70%,
+      rgba(139, 208, 42, 0.345) 85%,
+      rgba(183, 255, 0, 0.41) 100%
     );
   background-blend-mode: overlay;
 }
@@ -464,10 +464,10 @@ header {
 }
 
 .circle-designer {
-  background-image: url("img/designer.jpg");
+  background-image: url("img/dev.jpg");
 }
 .circle-dev {
-  background-image: url("img/dev.jpg");
+  background-image: url("img/Bernardo.png");
 }
 
 /* texto */
