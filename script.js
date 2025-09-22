@@ -109,25 +109,112 @@ document.querySelectorAll("header, .hero, .services, .portfolio, .about").forEac
 });
 
 
-// ====== FORMULÁRIO COM EMAILJS ======
-(function() {
-  emailjs.init("jSVwTzzEpts0wsu3U"); // sua Public Key
-})();
 
-const form = document.getElementById("contact-form");
-const statusMsg = document.getElementById("form-status");
 
-if (form) {
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
 
-    emailjs.sendForm("service_yf6my98", "template_0gaslyc", this)
-      .then(() => {
-        statusMsg.textContent = "✅ Email enviado com sucesso!";
-        form.reset();
-      }, (error) => {
-        statusMsg.textContent = "❌ Erro ao enviar. Tente novamente.";
-        console.error("Erro:", error);
-      });
+// ====== FORMULÁRIO WHATSAPP COM EMAIL ======
+document.addEventListener("DOMContentLoaded", function () {
+  const whatsappForm = document.getElementById("whatsapp-form");
+
+  if (whatsappForm) {
+    whatsappForm.addEventListener("submit", function (e) {
+      e.preventDefault(); // impede reload
+
+      const emailInput = document.getElementById("email");
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        alert("Por favor, insira o seu email antes de solicitar.");
+        return;
+      }
+
+      const mensagem =
+        "Olá, meu email é " + encodeURIComponent(email) +
+        ".%0AQuero agendar uma reunião com a AUCTA via Teams, " +
+        "para esclarecer todas as dúvidas, entender a demanda e fazer um orçamento.";
+
+      const numero = "351913768573";
+      const url = "https://wa.me/" + numero + "?text=" + mensagem;
+
+      console.log("Abrindo WhatsApp:", url); // debug
+      window.open(url, "_blank");
+    });
+  }
+});
+
+// ====== LIGHTBOX PORTFÓLIO ======
+document.addEventListener("DOMContentLoaded", () => {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector("#lightbox .close");
+  const prevBtn = document.querySelector("#lightbox .prev");
+  const nextBtn = document.querySelector("#lightbox .next");
+  const portfolioImgs = document.querySelectorAll(".carousel-images img");
+
+  let currentImgIndex = 0;
+
+  // Abrir lightbox ao clicar em imagem
+  portfolioImgs.forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentImgIndex = index;
+      openLightbox();
+    });
   });
-}
+
+  function openLightbox() {
+    if (!portfolioImgs[currentImgIndex]) return;
+    lightbox.style.display = "flex";
+    lightboxImg.src = portfolioImgs[currentImgIndex].src;
+  }
+
+  function closeLightbox() {
+    lightbox.style.display = "none";
+  }
+
+  // Fechar pelo X
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeLightbox);
+  }
+
+  // Fechar clicando fora da imagem
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Navegar para anterior
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      currentImgIndex = (currentImgIndex - 1 + portfolioImgs.length) % portfolioImgs.length;
+      openLightbox();
+    });
+  }
+
+  // Navegar para próxima
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      currentImgIndex = (currentImgIndex + 1) % portfolioImgs.length;
+      openLightbox();
+    });
+  }
+
+  // Atalhos do teclado
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") {
+        currentImgIndex = (currentImgIndex - 1 + portfolioImgs.length) % portfolioImgs.length;
+        openLightbox();
+      }
+      if (e.key === "ArrowRight") {
+        currentImgIndex = (currentImgIndex + 1) % portfolioImgs.length;
+        openLightbox();
+      }
+    }
+  });
+});

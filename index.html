@@ -26,16 +26,20 @@
       <img src="img/completo.png" alt="Logo AUCTA">
     </a>
     <nav>
-      <ul class="menu">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
+<!-- MENU -->
+<ul class="menu">
+  <li><a href="#inicio">Início</a></li>
+  <li><a href="#servicos">Serviços</a></li>
+  <li><a href="#portfolio">Portfólio</a></li>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="https://wa.me/351913768573?text=Olá,%20gostaria%20de%20entrar%20em%20contacto%20com%20a%20AUCTA%20para%20mais%20informações." target="_blank">Contacto</a></li>
+
+</ul>
+
     </nav>
     <!-- BOTÃO START REDIRECIONADO PARA WHATSAPP -->
-    <a href="https://wa.me/351913768573" target="_blank" class="btn-start">START</a>
+    <a href="https://wa.me/351913768573?text=Olá,%20vi%20o%20site%20da%20AUCTA%20e%20quero%20mais%20detalhes%20sobre%20os%20serviços." target="_blank" class="btn-hero">START</a>
+
     <div class="menu-toggle">&#9776;</div>
   </div>
 </header>
@@ -52,7 +56,8 @@
         digital.
       </h1>
       <!-- BOTÃO HERO REDIRECIONADO PARA WHATSAPP -->
-      <a href="https://wa.me/351913768573" target="_blank" class="btn-hero">START</a>
+<a href="https://wa.me/351913768573?text=Olá,%20vi%20o%20site%20da%20AUCTA%20e%20quero%20mais%20detalhes%20sobre%20os%20serviços." target="_blank" class="btn-hero">START</a>
+
     </div>
   </div>
 </section>
@@ -100,12 +105,25 @@
       <button class="arrow left">&#10094;</button>
       <div class="carousel-images">
         <img src="img/portfolio.png" alt="Projeto 1" class="active">
-        <img src="img/Mellomudanças.png" alt="Projeto 2">
-        <img src="img/TeteBolos.png" alt="Projeto 3">
 
+
+        <img src="img/GilAutomações.png" alt="Projeto 4">
+        <img src="img/barberFoto2.png" alt="Projeto 5">
+
+                <img src="img/Imobiliaria-Foto4.png" alt="Projeto 2">
+        <img src="img/Imobiliaria-Foto2.png" alt="Projeto 3">
       </div>
       <button class="arrow right">&#10095;</button>
     </div>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <span class="arrow prev">&#10094;</span>
+      <img class="lightbox-content" id="lightbox-img" alt="Imagem ampliada">
+      <span class="arrow next">&#10095;</span>
+    </div>
+
 
   </div>
 </section>
@@ -147,35 +165,39 @@
     </div>
 
 
-    
-
     <!-- LINKS -->
     <div class="footer-links">
-      <ul class="left-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#portfolio">Portfólio</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <ul class="right-links">
-        <li><a href="#">Segurança</a></li>
-        <li><a href="#">Central de ajuda</a></li>
-        <li><a href="#">Suporte</a></li>
-      </ul>
+<!-- FOOTER LINKS -->
+<ul class="left-links">
+  <li><a href="#inicio">Início</a></li>
+  <li><a href="#servicos">Serviços</a></li>
+  <li><a href="#portfolio">Portfólio</a></li>
+  <li><a href="#sobre">Sobre</a></li>
+  <li><a href="https://wa.me/351913768573?text=Olá,%20gostaria%20de%20entrar%20em%20contacto%20com%20a%20AUCTA%20para%20mais%20informações." target="_blank">Contacto</a></li>
+
+</ul>
+
+<ul class="right-links">
+  <li><a href="https://wa.me/351913768573?text=Preciso%20de%20ajuda%20na%20área%20de%20Segurança.%20Podem%20me%20orientar?" target="_blank">Segurança</a></li>
+  <li><a href="https://wa.me/351913768573?text=Olá,%20quero%20acesso%20à%20Central%20de%20Ajuda%20da%20AUCTA." target="_blank">Central de ajuda</a></li>
+  <li><a href="https://wa.me/351913768573?text=Estou%20com%20um%20problema%20e%20preciso%20de%20Suporte%20técnico." target="_blank">Suporte</a></li>
+</ul>
+
     </div>
 
     <!-- FORMULÁRIO -->
-    <div class="footer-form">
-      <h3>
-        <span class="highlight">Receba o contacto</span><br>
-        de um de nossos especialistas.
-      </h3>
-      <form action="https://wa.me/351913768573" target="_blank">
-        <input type="email" placeholder="E-mail" required>
-        <button type="submit">Solicitar</button>
-      </form>
-    </div>
+<div class="footer-form">
+  <h3>
+    <span class="highlight">Receba o contacto</span><br>
+    de um de nossos especialistas.
+  </h3>
+
+  <form id="whatsapp-form">
+    <input type="email" id="email" placeholder="E-mail" required>
+    <button type="submit">Solicitar</button>
+  </form>
+</div>
+
 
   </div>
 </footer>

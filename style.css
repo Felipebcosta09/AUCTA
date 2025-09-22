@@ -467,7 +467,7 @@ header {
 }
 
 .circle-designer {
-  background-image: url("img/dev.jpg");
+  background-image: url("img/eu-sobre.png");
 }
 .circle-dev {
   background-image: url("img/Bernardo.png");
@@ -1052,9 +1052,70 @@ header.animate .logo {
     font-size: 0.8rem;           /* fonte menor */
   }
 }
-@media (max-width: 600px) {
-  .hero .btn-hero {
-    display: none;
+/* Esconde START e texto do hero abaixo de 800px */
+@media (max-width: 1200px) {
+  .btn-hero,
+  .btn-start,
+  .hero h1 {
+    display: none !important;
   }
 }
 
+
+/* Fundo escurecido do lightbox */
+.lightbox {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* impede barra de rolagem */
+}
+
+/* Imagem centralizada */
+.lightbox-content {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+/* Botão de fechar (X verde) */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: limegreen;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Setas de navegação */
+.lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  transform: translateY(-50%);
+}
+
+.lightbox .arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Posição das setas */
+.lightbox .prev { left: 30px; }
+.lightbox .next { right: 30px; }
